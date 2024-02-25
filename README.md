@@ -62,6 +62,9 @@ PAGES = [
 Replace "https://example.com/" with the URLs of the pages you want to scrape.
 
 
+----------------------------------
+
+
 # AIOpenDK - TreeIndexing webscraper
 
 This Python script is designed to scrape web pages from a specified domain and save their content as Markdown files. It follows a recursive approach to navigate through the website, ensuring all linked pages within the domain are visited and processed. Additionally, it organizes the saved Markdown files into a folder structure that mirrors the website's subdirectory hierarchy.
