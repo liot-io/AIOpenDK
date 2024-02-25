@@ -11,10 +11,10 @@ Clone the Repository: Clone or download the script from the repository where it'
 
 Install Dependencies: Install the required dependencies using pip. Run the following command in your terminal:
 
-bash
-Copy code
 pip install requests-html html2text
-Usage
+
+# Usage
+
 Set Pages: Define the URLs of the pages you want to scrape in the PAGES list. You can specify multiple URLs.
 
 Run the Script: Execute the script by running it in your terminal or IDE.
@@ -22,9 +22,15 @@ Run the Script: Execute the script by running it in your terminal or IDE.
 Output: The script will create a directory named content in the same location as the script. Inside the content directory, it will create a subdirectory named after the domain being scraped (e.g., foedevarestyrelsen). The Markdown files will be saved in this directory.
 
 # Code Explanation
-Imported Libraries: The script imports necessary libraries such as os, html2text, HTMLSession from requests_html, urlparse, re, etc.
 
-" Functions:
+Imported Libraries: The script imports necessary libraries such as:
+- os,
+- html2text,
+- HTMLSession from requests_html,
+- urlparse,
+- re, etc.
+
+# Functions:
 
 extract_filename_from_url(url): --> Extracts the filename from the URL and saves it as a .md file.
 
@@ -49,9 +55,58 @@ requests-html: Used for making HTTP requests and rendering JavaScript.
 html2text: Used for converting HTML content to Markdown format.
 
 # Example
-python
-Copy code
+
 PAGES = [
     "https://example.com/",
 ]
 Replace "https://example.com/" with the URLs of the pages you want to scrape.
+
+
+# AIOpenDK - TreeIndexing webscraper
+
+This Python script is designed to scrape web pages from a specified domain and save their content as Markdown files. It follows a recursive approach to navigate through the website, ensuring all linked pages within the domain are visited and processed. Additionally, it organizes the saved Markdown files into a folder structure that mirrors the website's subdirectory hierarchy.
+
+# Installation
+Before running the script, ensure you have Python installed on your system. You can download Python from the official website.
+
+To install the required dependencies, use pip:
+
+pip install requests-html html2text
+
+# How to Use
+
+Clone this repository to your local machine using the following command:
+
+git clone https://github.com/liot-io/AIOpenDK/tree/main.git
+
+Execute the Python script with the following command:
+python treeindex_scraper.py
+
+# Script Explanation
+
+Imported Libraries: The script imports the necessary libraries for web scraping, such as os, html2text, requests_html, urllib, and re.
+
+# Function Definitions:
+
+extract_filename_from_url: --> Extracts the filename from a given URL and formats it as a Markdown file.
+extract_urls_from_html: --> Extracts all URLs from the HTML content of a web page.
+download_and_save_in_markdown: --> Downloads the HTML content from a web page, converts it to Markdown format, and saves it as a file.
+download: --> Main function responsible for crawling the website, downloading and saving pages recursively.
+Main Execution:
+
+# The script defines a list of URLs (PAGES) to start the scraping process.
+
+It creates a base directory (content/foedevarestyrelsen) to store the Markdown files.
+The download function is called to initiate the scraping process, which traverses through the web pages, extracts links, and saves Markdown files accordingly.
+Example Usage
+Suppose we want to scrape the website https://example.dk/:
+
+All pages from the root domain (https://example.dk/) will be saved in the folder content/example
+Pages from subdirectories like https://example.dk/folder will be saved in content/example/folder.
+
+Similarly, pages from deeper subdirectories like https://example.dk/folder/kontrol will be saved in content/example/folder/kontrol.
+
+# Notes
+Ensure you have proper permissions to write files in the specified directory.
+The script may take some time to execute, depending on the size of the website and the number of pages to be scraped.
+Adjust the timeout parameter in the script if you encounter connection issues or timeouts with certain websites.
