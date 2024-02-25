@@ -19,7 +19,7 @@ Set Pages: Define the URLs of the pages you want to scrape in the PAGES list. Yo
 
 Run the Script: Execute the script by running it in your terminal or IDE.
 
-Output: The script will create a directory named content in the same location as the script. Inside the content directory, it will create a subdirectory named after the domain being scraped (e.g., foedevarestyrelsen). The Markdown files will be saved in this directory.
+Output: The script will create a directory named content in the same location as the script. Inside the content directory, it will create a subdirectory named after the domain being scraped (e.g., Example). The Markdown files will be saved in this directory.
 
 # Code Explanation
 
