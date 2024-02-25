@@ -1,4 +1,4 @@
-# AIOpenDK Github
+# AIOpenDK - simple webscraper
 
 # Web Scraper for Generating Markdown Files from Web Pages
 Overview
