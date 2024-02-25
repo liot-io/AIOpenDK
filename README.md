@@ -26,15 +26,19 @@ Imported Libraries: The script imports necessary libraries such as os, html2text
 
 " Functions:
 
-extract_filename_from_url(url): Extracts the filename from the URL and saves it as a .md file.
-extract_urls_from_html(html_content, base_url): Extracts URLs from HTML content.
-download_and_save_in_markdown(url, dir_path): Downloads HTML content from a webpage, converts it to Markdown, and saves it.
-download(pages): Downloads HTML content from the specified pages, saves them as Markdown files, and handles subpages within the root URL.
+extract_filename_from_url(url): --> Extracts the filename from the URL and saves it as a .md file.
+
+extract_urls_from_html(html_content, base_url): --> Extracts URLs from HTML content.
+
+download_and_save_in_markdown(url, dir_path): --> Downloads HTML content from a webpage, converts it to Markdown, and saves it.
+
+download(pages): --> Downloads HTML content from the specified pages, saves them as Markdown files, and handles subpages within the root URL.
 
 # Execution:
 
 The script checks if it's being run as the main program (if __name__ == "__main__":), then calls the download function with the specified PAGES.
 Handling Duplicates
+
 The script uses a set named processed_urls to track processed URLs and avoid duplicates. Before processing a URL, it checks if it's already present in the set. If not, it adds the URL to the set and proceeds with processing. This ensures that each URL is processed only once.
 
 # Filtering Non-HTML Content
