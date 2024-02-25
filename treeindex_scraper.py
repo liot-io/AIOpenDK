@@ -9,7 +9,10 @@ def extract_filename_from_url(url: str) -> str:
     """Extract the filename from the URL."""
     parsed_url = urlparse(url)
     path_segments = parsed_url.path.strip("/").split("/")
-    filename = path_segments[-1] if path_segments[-1] else path_segments[-2]
+    if path_segments:
+        filename = path_segments[-1]
+    else:
+        filename = parsed_url.netloc  # Use domain name as filename if no path segments
     filename = filename.split(".")[0]  # Remove extension if present
     return filename + ".md"
 
@@ -69,7 +72,7 @@ def download(pages: List[str]) -> str:
     return base_dir
 
 PAGES = [
-    "https://foedevarestyrelsen.dk/",
+    "https://example.dk",
 ]
 
 if __name__ == "__main__":
