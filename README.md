@@ -99,7 +99,7 @@ Main Execution:
 
 # The script defines a list of URLs (PAGES) to start the scraping process.
 
-It creates a base directory (content/foedevarestyrelsen) to store the Markdown files.
+It creates a base directory (content/example) to store the Markdown files.
 The download function is called to initiate the scraping process, which traverses through the web pages, extracts links, and saves Markdown files accordingly.
 Example Usage
 Suppose we want to scrape the website https://example.dk/:
