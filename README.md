@@ -162,6 +162,6 @@ content/example.dk/pdfs: --> Directory where Markdown files will be saved.
 
 ## Running the Script
 
-    ```bash
+
     python pdf_scraper.py
-    ```
+
