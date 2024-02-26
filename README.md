@@ -18,7 +18,7 @@ This Python script allows you to download the HTML content from a target web pag
 1. **Clone the Repository**: Clone this repository to your local machine:
 
     ```bash
-    git clone git clone https://github.com/liot-io/AIOpenDK/tree/main.git
+    git clone git clone https://github.com/liot-io/AIOpenDK.git
     ```
 
 2. **Install Dependencies**: Install the required dependencies using pip:
