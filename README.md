@@ -142,7 +142,7 @@ This Python script scrapes text from all PDF files in a specified directory and 
 2. Ensure that Python and the required dependencies are installed.
 3. Place your PDF files in the specified directory (content/example.dk/src_pdf).
 4. Run the script pdf_text_scraper.py.
-5. The scraped text will be saved as Markdown files in the output directory (content/foedevarestyrelsen.dk/pdfs).
+5. The scraped text will be saved as Markdown files in the output directory (content/example.dk/pdfs).
 
 
 ## How It Works
@@ -157,10 +157,11 @@ This Python script scrapes text from all PDF files in a specified directory and 
 ## Directory Structure
 
 pdf_text_scraper.py: Main Python script.
-content/foedevarestyrelsen.dk/src_pdf: Directory containing input PDF files.
-content/foedevarestyrelsen.dk/pdfs: Directory where Markdown files will be saved.
+content/example.dk/src_pdf: Directory containing input PDF files.
+content/example.dk/pdfs: Directory where Markdown files will be saved.
 Running the Script
+
     ```bash
 python pdf_text_scraper.py
-```
+    ```
 
