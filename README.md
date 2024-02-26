@@ -1,8 +1,6 @@
 # AIOpenDK - simple webscraper services
 
 
-markdown
-Copy code
 # Web Scraper for Generating Markdown Files from Web Pages
 
 This Python script allows you to scrape web pages from a specified domain, download their HTML content, and save them as Markdown files. It includes functionalities to handle dependencies, avoid duplicates, and filter out non-HTML content.
@@ -17,18 +15,20 @@ This Python script allows you to scrape web pages from a specified domain, downl
 
    ```bash
    pip install requests-html html2text
-Usage
-Set Pages: Define the URLs of the pages you want to scrape in the PAGES list. You can specify multiple URLs.
 
-Run the Script: Execute the script by running it in your terminal or IDE.
+# Usage
+- Set Pages: Define the URLs of the pages you want to scrape in the PAGES list. You can specify multiple URLs.
 
-Output: The script will create a directory named content in the same location as the script. Inside the content directory, it will create a subdirectory named after the domain being scraped (e.g., foedevarestyrelsen). The Markdown files will be saved in this directory.
+- Run the Script: Execute the script by running it in your terminal or IDE.
 
-Code Explanation
-Imported Libraries
+- Output: The script will create a directory named content in the same location as the script. Inside the content directory, it will create a subdirectory named after the domain being scraped (e.g., foedevarestyrelsen). The Markdown files will be saved in this directory.
+
+# Code Explanation
+## Imported Libraries
+
 The script imports necessary libraries such as os, html2text, HTMLSession from requests_html, urlparse, re, etc.
 
-Function Definitions
+## Function Definitions
 extract_filename_from_url(url: str) -> str: Extracts the filename from the URL and saves it as a .md file.
 
 extract_urls_from_html(html_content: str, base_url: str) -> List[str]: Extracts URLs from HTML content.
@@ -37,10 +37,10 @@ download_and_save_in_markdown(url: str, dir_path: str) -> None: Downloads HTML c
 
 download(pages: List[str]) -> str: Downloads HTML content from the specified pages, saves them as Markdown files, and handles subpages within the root URL.
 
-Execution
+## Execution
 The script checks if it's being run as the main program (if __name__ == "__main__":), then calls the download function with the specified PAGES.
 
-Handling Duplicates
+## Handling Duplicates
 The script uses a set named processed_urls to track processed URLs and avoid duplicates. Before processing a URL, it checks if it's already present in the set. If not, it adds the URL to the set and proceeds with processing. This ensures that each URL is processed only once.
 
 # Filtering Non-HTML Content
