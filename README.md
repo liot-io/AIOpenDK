@@ -39,11 +39,11 @@ This Python script allows you to download the HTML content from a target web pag
 
 ## Code Explanation
 
-- **extract_filename_from_url**: Extracts the filename from the URL by parsing the domain name and adding the .md extension.
+- **extract_filename_from_url**: --> Extracts the filename from the URL by parsing the domain name and adding the .md extension.
 
-- **download_and_save_in_markdown**: Downloads the HTML content from the web page, converts it to Markdown format, and saves it as a .md file.
+- **download_and_save_in_markdown**: --> Downloads the HTML content from the web page, converts it to Markdown format, and saves it as a .md file.
 
-- **download_target_page**: Downloads the HTML content from the target page specified in `TARGET_PAGES` and saves it as a Markdown file.
+- **download_target_page**: --> Downloads the HTML content from the target page specified in `TARGET_PAGES` and saves it as a Markdown file.
   
 
 ## Configuration
@@ -60,8 +60,11 @@ Upon running the script, the HTML content of the target page will be downloaded,
 ## Notes
 
 Ensure that you have proper permissions to write files in the specified directory.
+
 The script will skip non-HTML pages and handle errors gracefully.
+
 Adjust the timeout parameters in the script if you encounter connection issues or timeouts with certain websites.
+
 You can modify the script to customize the directory structure or filename as per your requirements.
 
 
@@ -70,13 +73,16 @@ You can modify the script to customize the directory structure or filename as pe
 
 # AIOpenDK - TreeIndexing Webscraper
 
-This Python script is designed to scrape web pages from a specified domain and save their content as Markdown files. It follows a recursive approach to navigate through the website, ensuring all linked pages within the domain are visited and processed. Additionally, it organizes the saved Markdown files into a folder structure that mirrors the website's subdirectory hierarchy.
+This Python script is designed to scrape web pages from a specified domain and save their content as Markdown files. It follows a recursive approach to navigate through the website, ensuring all linked pages within the domain are visited and processed. 
+
+Additionally, it organizes the saved Markdown files into a folder structure that mirrors the website's subdirectory hierarchy.
 
 ## Installation
 
 Before running the script, ensure you have Python installed on your system. You can download Python from the official website.
 
 To install the required dependencies, use pip:
+
 pip install requests-html html2text
 
 ## How to Use
@@ -100,27 +106,38 @@ The script imports the necessary libraries for web scraping, such as os, html2te
 
 ### Function Definitions
 
-extract_filename_from_url: Extracts the filename from a given URL and formats it as a Markdown file.
+**extract_filename_from_url**: --> Extracts the filename from a given URL and formats it as a Markdown file.
 
-extract_urls_from_html: Extracts all URLs from the HTML content of a web page.
 
-download_and_save_in_markdown: Downloads the HTML content from a web page, converts it to Markdown format, and saves it as a file.
+**vextract_urls_from_html**: --> Extracts all URLs from the HTML content of a web page.
 
-download: Main function responsible for crawling the website, downloading, and saving pages recursively.
+
+**download_and_save_in_markdown**: --> Downloads the HTML content from a web page, converts it to Markdown format, and saves it as a file.
+
+
+**download**: --> Main function responsible for crawling the website, downloading, and saving pages recursively.
 
 
 ## Main Execution
 
 The script defines a list of URLs (PAGES) to start the scraping process.
 It creates a base directory (content/example) to store the Markdown files.
+
 The download function is called to initiate the scraping process, which traverses through the web pages, extracts links, and saves Markdown files accordingly.
-Example Usage
+
+
+## Example Usage
+
 Suppose we want to scrape the website https://example.dk/:
 
 All pages from the root domain (https://example.dk/) will be saved in the folder content/example.
+
 Pages from subdirectories like https://example.dk/folder will be saved in content/example/folder.
+
 Similarly, pages from deeper subdirectories like https://example.dk/folder/kontrol will be saved in content/example/folder/kontrol.
-Notes
+
+
+## Notes
 Ensure you have proper permissions to write files in the specified directory.
 The script may take some time to execute, depending on the size of the website and the number of pages to be scraped.
 Adjust the timeout parameter in the script if you encounter connection issues or timeouts with certain websites.
