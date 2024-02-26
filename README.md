@@ -116,7 +116,7 @@ The script imports the necessary libraries for web scraping, such as os, html2te
 **extract_filename_from_url**: --> Extracts the filename from a given URL and formats it as a Markdown file.
 
 
-**vextract_urls_from_html**: --> Extracts all URLs from the HTML content of a web page.
+**extract_urls_from_html**: --> Extracts all URLs from the HTML content of a web page.
 
 
 **download_and_save_in_markdown**: --> Downloads the HTML content from a web page, converts it to Markdown format, and saves it as a file.
