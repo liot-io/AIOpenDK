@@ -27,15 +27,6 @@ This Python script allows you to download the HTML content from a target web pag
     pip install requests-html html2text
     ```
 
-## Usage
-
-1. **Set Target Page**: Define the target web page URL in the `TARGET_PAGES` list within the script.
-
-2. **Run the Script**: Execute the Python script to download and save the target web page as a Markdown file:
-
-    ```bash
-    python convert_to_markdown.py
-    ```
 
 ## Code Explanation
 
@@ -56,6 +47,17 @@ This Python script allows you to download the HTML content from a target web pag
 Suppose we want to convert the web page https://example.dk/ to Markdown format:
 
 Upon running the script, the HTML content of the target page will be downloaded, converted to Markdown, and saved as example.dk.md in the content directory.
+
+
+## Running the Script
+
+1. **Set Target Page**: Define the target web page URL in the `TARGET_PAGES` list within the script.
+
+2. **Run the Script**: Execute the Python script to download and save the target web page as a Markdown file:
+
+    ```bash
+    python convert_to_markdown.py
+    ```
 
 
 ## Notes
@@ -144,6 +146,9 @@ Similarly, pages from deeper subdirectories like https://example.dk/folder/kontr
 
 ## Running the Script
 
+1. **Set Page**: Define the target web page URL in the `PAGES` list within the script.
+
+2. **Run the Script**: Execute the Python script to download and save the target web page as a Markdown file:
 
 
     python treeindex_scraper.py
