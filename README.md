@@ -129,84 +129,39 @@ Adjust the timeout parameter in the script if you encounter connection issues or
 
 # AIOpenDK - PDF Text Scraper
 
-This Python script is designed to extract text from PDF files and save it as Markdown (.md) files. It utilizes the `pdfminer` library to extract text from PDF documents.
+This Python script scrapes text from all PDF files in a specified directory and saves them as Markdown files.
 
-## Features
+# Prerequisites
 
-- Extracts text from PDF files
-- Saves extracted text as Markdown (.md) files
-- Handles errors gracefully
-- Can process multiple PDF files in a directory
+- Python 3.x
+- pdfminer.six library (Install via pip install pdfminer.six)
 
 ## Usage
 
-1. **Install Dependencies**: Make sure you have `pdfminer` library installed. You can install it using pip:
+1. Clone the repository or download the script file (pdf_text_scraper.py).
+2. Ensure that Python and the required dependencies are installed.
+3. Place your PDF files in the specified directory (content/example.dk/src_pdf).
+4. Run the script pdf_text_scraper.py.
+5. The scraped text will be saved as Markdown files in the output directory (content/foedevarestyrelsen.dk/pdfs).
 
-   ```bash
-   pip install pdfminer.six
-Run the Script: Execute the pdf_scraper.py script to extract text from PDF files and save it as Markdown files:
 
-bash
+## How It Works
+
+- The script iterates through all PDF files in the specified directory.
+- For each PDF file:
+  1. It checks if the file has been processed before to avoid duplicates.
+  2. It extracts text from the PDF using the extract_text function from pdfminer.high_level.
+  3. The extracted text is saved as a Markdown file in the output directory.
+- If an error occurs during the scraping process, the script prints an error message.
+
+## Directory Structure
+
+pdf_text_scraper.py: Main Python script.
+content/foedevarestyrelsen.dk/src_pdf: Directory containing input PDF files.
+content/foedevarestyrelsen.dk/pdfs: Directory where Markdown files will be saved.
+Running the Script
+    ```bash
 Copy code
-python pdf_scraper.py
-Ensure that the PDF files you want to scrape are located in the specified directory.
+python pdf_text_scraper.py
+```
 
-Code Explanation
-The script consists of two main functions:
-
-scrape_pdf(filepath)
-This function takes a file path to a PDF document as input, extracts text from the PDF using pdfminer.high_level.extract_text, and saves the extracted text as a Markdown file with the same name as the original PDF file.
-
-filepath: Path to the PDF file to be scraped.
-scrape_all_pdfs()
-This function scrapes text from all PDF files in a specified directory. It iterates through each PDF file in the directory, calls scrape_pdf() function for each file, and handles any errors that occur during the scraping process.
-
-
-from pdfminer.high_level import extract_text
-import os
-
-def scrape_pdf(filepath):
-    try:
-        # Extract text from the PDF file
-        text = extract_text(filepath)
-        
-        # Get the filename without extension
-        filename = os.path.splitext(os.path.basename(filepath))[0]
-        
-        # Define the output directory
-        output_dir = os.path.join("content", "pdfs")
-        os.makedirs(output_dir, exist_ok=True)
-        
-        # Define the output file path
-        output_path = os.path.join(output_dir, f"{filename}.md")
-        
-        # Write the text to the markdown file
-        with open(output_path, "w") as md_file:
-            md_file.write(text)
-        
-        print(f"Scraping successful! Text saved in '{output_path}'.")
-    except Exception as e:
-        print(f"Error scraping '{filepath}': {e}")
-
-def scrape_all_pdfs():
-    # Define the directory containing PDF files
-    pdf_directory = os.path.join("content", "pdfs")
-    
-    # Check if the directory exists
-    if not os.path.exists(pdf_directory):
-        print("PDF directory not found.")
-        return
-    
-    # Iterate through PDF files in the directory
-    for filename in os.listdir(pdf_directory):
-        if filename.endswith(".pdf"):
-            filepath = os.path.join(pdf_directory, filename)
-            scrape_pdf(filepath)
-
-if __name__ == "__main__":
-    scrape_all_pdfs()
-
-
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
