@@ -82,15 +82,15 @@ pip install requests-html html2text
 ## How to Use
 Clone this Repository: Clone this repository to your local machine using the following command:
 
-    ```bash
+
     git clone git clone https://github.com/liot-io/AIOpenDK/tree/main.git
-    ```
+
     
 ### Execute the Python Script: Execute the Python script with the following command:
 
-    ```bash
+
     python treeindex_scraper.py
-    ```
+
 
 ## Script Explanation
 
