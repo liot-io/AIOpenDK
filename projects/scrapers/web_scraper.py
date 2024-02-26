@@ -1,23 +1,13 @@
 import os
-from typing import List
 import html2text
 from requests_html import HTMLSession
-from urllib.parse import urlparse, urljoin
-import re
+from urllib.parse import urlparse
 
 def extract_filename_from_url(url: str) -> str:
     """Extract the filename from the URL."""
     parsed_url = urlparse(url)
-    path_segments = parsed_url.path.split("/")
-    filename = path_segments[-1] if path_segments[-1] else path_segments[-2]
-    filename = filename.split(".")[0]  # Remove extension if present
-    return filename + ".md"
-
-def extract_urls_from_html(html_content: str, base_url: str) -> List[str]:
-    """Extract URLs from HTML content."""
-    urls = re.findall(r'href=["\'](.*?)["\']', html_content)
-    absolute_urls = [urljoin(base_url, url) for url in urls]
-    return absolute_urls
+    filename = parsed_url.netloc  # Extract domain name from URL
+    return filename + ".md"  # Add .md extension
 
 def download_and_save_in_markdown(url: str, dir_path: str) -> None:
     """Download the HTML content from the web page and save it as a markdown file."""
@@ -47,33 +37,22 @@ def download_and_save_in_markdown(url: str, dir_path: str) -> None:
         with open(filename, "w", encoding="utf-8") as f:
             f.write(markdown_content)
 
-def download(pages: List[str]) -> str:
-    """Download the HTML content from the pages and save them as markdown files."""
-    # Create the content/foedevarestyrelsen directory if it doesn't exist
+def download_target_page(url: str) -> None:
+    """Download the HTML content from the target page and save it as a markdown file."""
+    # Create the content directory if it doesn't exist
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    dir_path = os.path.join(base_dir, "content", "foedevarestyrelsen")
+    dir_path = os.path.join(base_dir, "content")
     os.makedirs(dir_path, exist_ok=True)
     
-    processed_urls = set()  # To track processed URLs and avoid duplicates
-    while pages:
-        current_url = pages.pop(0)
-        if current_url not in processed_urls:
-            download_and_save_in_markdown(current_url, dir_path)
-            processed_urls.add(current_url)
-            
-            session = HTMLSession()
-            response = session.get(current_url, timeout=30)
-            subpages = extract_urls_from_html(response.text, current_url)
-            
-            # Extracting subpages within the root URL
-            subpages = [link for link in subpages if link.startswith(current_url) and not link.endswith(('.ico', '.png', '.jpg', '.jpeg', '.gif'))]
-            pages.extend(subpages)
-    
-    return dir_path
+    # Download and save the target page
+    download_and_save_in_markdown(url, dir_path)
+    print("Target page has been successfully downloaded!")
 
-PAGES = [
-    "https://foedevarestyrelsen.dk/",
+# Define the target page
+TARGET_PAGES = [
+    "https://Example.dk/",
 ]
 
 if __name__ == "__main__":
-    download(PAGES)
+    for target_page in TARGET_PAGES:
+        download_target_page(target_page)
