@@ -56,7 +56,7 @@ Upon running the script, the HTML content of the target page will be downloaded,
 2. **Run the Script**: Execute the Python script to download and save the target web page as a Markdown file:
 
     ```bash
-    python convert_to_markdown.py
+    python web_scraper.py
     ```
 
 
@@ -150,9 +150,9 @@ Similarly, pages from deeper subdirectories like https://example.dk/folder/kontr
 
 2. **Run the Script**: Execute the Python script to download and save the target web page as a Markdown file:
 
-
+    ```bash
     python treeindex_scraper.py
-
+    ```
 
 
 
