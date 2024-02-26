@@ -98,11 +98,6 @@ Clone this Repository: Clone this repository to your local machine using the fol
     git clone git clone https://github.com/liot-io/AIOpenDK/tree/main.git
 
     
-### Execute the Python Script: Execute the Python script with the following command:
-
-
-    python treeindex_scraper.py
-
 
 ## Script Explanation
 
@@ -145,6 +140,15 @@ All pages from the root domain (https://example.dk/) will be saved in the folder
 Pages from subdirectories like https://example.dk/folder will be saved in content/example/folder.
 
 Similarly, pages from deeper subdirectories like https://example.dk/folder/kontrol will be saved in content/example/folder/kontrol.
+
+
+## Running the Script
+
+
+
+    python treeindex_scraper.py
+
+
 
 
 ## Notes
