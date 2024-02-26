@@ -21,7 +21,7 @@ This Python script allows you to scrape web pages from a specified domain, downl
 
 - Run the Script: Execute the script by running it in your terminal or IDE.
 
-- Output: The script will create a directory named content in the same location as the script. Inside the content directory, it will create a subdirectory named after the domain being scraped (e.g., foedevarestyrelsen). The Markdown files will be saved in this directory.
+- Output: The script will create a directory named content in the same location as the script. Inside the content directory, it will create a subdirectory named after the domain being scraped (e.g., example). The Markdown files will be saved in this directory.
 
 # Code Explanation
 ## Imported Libraries
@@ -54,9 +54,9 @@ Example
 python
 Copy code
 PAGES = [
-    "https://foedevarestyrelsen.dk/",
+    "https://example.dk/",
 ]
-Replace "https://foedevarestyrelsen.dk/" with the URLs of the pages you want to scrape.
+Replace "https://example.dk/" with the URLs of the pages you want to scrape.
 
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
