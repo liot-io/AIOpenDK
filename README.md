@@ -84,14 +84,13 @@ Copy code
 git clone https://github.com/liot-io/AIOpenDK/tree/main.git
 Execute the Python Script: Execute the Python script with the following command:
 
-bash
-Copy code
+
 python treeindex_scraper.py
 Script Explanation
 Imported Libraries
 The script imports the necessary libraries for web scraping, such as os, html2text, requests_html, urllib, and re.
 
-Function Definitions
+# Function Definitions
 extract_filename_from_url: Extracts the filename from a given URL and formats it as a Markdown file.
 
 extract_urls_from_html: Extracts all URLs from the HTML content of a web page.
