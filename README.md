@@ -83,9 +83,9 @@ Before running the script, ensure you have Python installed on your system. You 
 
 To install the required dependencies, use pip:
 
-    ```bash
+
     pip install requests-html html2text
-    ```
+
 
 
 ## How to Use
