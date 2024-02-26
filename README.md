@@ -57,6 +57,7 @@ Suppose we want to convert the web page https://example.dk/ to Markdown format:
 
 Upon running the script, the HTML content of the target page will be downloaded, converted to Markdown, and saved as example.dk.md in the content directory.
 
+
 ## Notes
 
 Ensure that you have proper permissions to write files in the specified directory.
@@ -76,6 +77,7 @@ You can modify the script to customize the directory structure or filename as pe
 This Python script is designed to scrape web pages from a specified domain and save their content as Markdown files. It follows a recursive approach to navigate through the website, ensuring all linked pages within the domain are visited and processed. 
 
 Additionally, it organizes the saved Markdown files into a folder structure that mirrors the website's subdirectory hierarchy.
+
 
 ## Installation
 
@@ -103,11 +105,15 @@ Clone this Repository: Clone this repository to your local machine using the fol
 
 ## Script Explanation
 
+
 ### Imported Libraries
+
 
 The script imports the necessary libraries for web scraping, such as os, html2text, requests_html, urllib, and re.
 
+
 ### Function Definitions
+
 
 **extract_filename_from_url**: --> Extracts the filename from a given URL and formats it as a Markdown file.
 
@@ -151,10 +157,12 @@ Adjust the timeout parameter in the script if you encounter connection issues or
 
 This Python script scrapes text from all PDF files in a specified directory and saves them as Markdown files.
 
+
 # Prerequisites
 
 - Python 3.x
 - pdfminer.six library (Install via pip install pdfminer.six)
+
 
 ## Usage
 
