@@ -1,7 +1,8 @@
-# AIOpenDK - simple webscraper services
+# AIOpenDK - simple scraper services
 
+-----------------------------------
 
-# Web Page to Markdown Converter
+# AIOpenDK - Web Page to Markdown Converter
 
 This Python script allows you to download the HTML content from a target web page and save it as a Markdown (.md) file. It utilizes the `requests_html` library to fetch web content and the `html2text` library to convert HTML to Markdown format.
 
@@ -126,7 +127,7 @@ Adjust the timeout parameter in the script if you encounter connection issues or
 
 ----------------------------------------------------
 
-# PDF Text Scraper
+# AIOpenDK - PDF Text Scraper
 
 This Python script is designed to extract text from PDF files and save it as Markdown (.md) files. It utilizes the `pdfminer` library to extract text from PDF documents.
 
