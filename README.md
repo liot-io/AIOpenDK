@@ -49,7 +49,7 @@ The script defines a list of URLs (`PAGES`) to start the scraping process. It cr
 
 To scrape the website [https://foedevarestyrelsen.dk/](https://foedevarestyrelsen.dk/), simply execute the script. All pages from the root domain will be saved in the folder `content/foedevarestyrelsen`. Pages from subdirectories will also be saved in their respective folders within `content/foedevarestyrelsen`.
 
-```bash
+
 python your_script.py
 
 
