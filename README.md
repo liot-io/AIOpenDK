@@ -28,7 +28,7 @@ This Python script allows you to download the HTML content from a target web pag
     ```
 
 
-## Code Explanation
+## Function Definitions
 
 - **extract_filename_from_url**: --> Extracts the filename from the URL by parsing the domain name and adding the .md extension.
 
@@ -133,7 +133,12 @@ It creates a base directory (content/example) to store the Markdown files.
 The download function is called to initiate the scraping process, which traverses through the web pages, extracts links, and saves Markdown files accordingly.
 
 
-## Example Usage
+## Configuration
+
+- **PAGES**: Define the target web page URLs in the `TARGET_PAGES` list. The script will download and save each page as a Markdown file.
+
+
+## Example
 
 Suppose we want to scrape the website https://example.dk/:
 
@@ -192,11 +197,13 @@ This Python script scrapes text from all PDF files in a specified directory and 
   3. The extracted text is saved as a Markdown file in the output directory.
 - If an error occurs during the scraping process, the script prints an error message.
 
-## Directory Structure
+## Function Definitions
 
-pdf_text_scraper.py: --> Main Python script.
-content/example.dk/src_pdf: --> Directory containing input PDF files.
-content/example.dk/pdfs: --> Directory where Markdown files will be saved.
+**pdf_text_scraper.py**: --> Main Python script.
+
+**content/example.dk/src_pdf**: --> Directory containing input PDF files.
+
+**content/example.dk/pdfs**: --> Directory where Markdown files will be saved.
 
 ## Running the Script
 
