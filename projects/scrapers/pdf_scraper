@@ -1,0 +1,43 @@
+from pdfminer.high_level import extract_text
+import os
+
+def scrape_pdf(filepath):
+    try:
+        # Extract text from the PDF file
+        text = extract_text(filepath)
+        
+        # Get the filename without extension
+        filename = os.path.splitext(os.path.basename(filepath))[0]
+        
+        # Define the output directory
+        output_dir = os.path.join("content", "pdfs")
+        os.makedirs(output_dir, exist_ok=True)
+        
+        # Define the output file path
+        output_path = os.path.join(output_dir, f"{filename}.md")
+        
+        # Write the text to the markdown file
+        with open(output_path, "w") as md_file:
+            md_file.write(text)
+        
+        print(f"Scraping successful! Text saved in '{output_path}'.")
+    except Exception as e:
+        print(f"Error scraping '{filepath}': {e}")
+
+def scrape_all_pdfs():
+    # Define the directory containing PDF files
+    pdf_directory = os.path.join("content", "src_pdf")
+    
+    # Check if the directory exists
+    if not os.path.exists(pdf_directory):
+        print("PDF directory not found.")
+        return
+    
+    # Iterate through PDF files in the directory
+    for filename in os.listdir(pdf_directory):
+        if filename.endswith(".pdf"):
+            filepath = os.path.join(pdf_directory, filename)
+            scrape_pdf(filepath)
+
+if __name__ == "__main__":
+    scrape_all_pdfs()
