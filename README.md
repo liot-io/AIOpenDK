@@ -64,9 +64,6 @@ Adjust the timeout parameters in the script if you encounter connection issues o
 You can modify the script to customize the directory structure or filename as per your requirements.
 
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 ----------------------------------
 
 
@@ -84,19 +81,24 @@ pip install requests-html html2text
 ## How to Use
 Clone this Repository: Clone this repository to your local machine using the following command:
 
-
+    ```bash
 git clone https://github.com/liot-io/AIOpenDK/tree/main.git
-
+    ```
+    
 ### Execute the Python Script: Execute the Python script with the following command:
 
+    ```bash
 python treeindex_scraper.py
+    ```
 
 ## Script Explanation
 
 ### Imported Libraries
+
 The script imports the necessary libraries for web scraping, such as os, html2text, requests_html, urllib, and re.
 
 ### Function Definitions
+
 extract_filename_from_url: Extracts the filename from a given URL and formats it as a Markdown file.
 
 extract_urls_from_html: Extracts all URLs from the HTML content of a web page.
@@ -104,6 +106,7 @@ extract_urls_from_html: Extracts all URLs from the HTML content of a web page.
 download_and_save_in_markdown: Downloads the HTML content from a web page, converts it to Markdown format, and saves it as a file.
 
 download: Main function responsible for crawling the website, downloading, and saving pages recursively.
+
 
 ## Main Execution
 
