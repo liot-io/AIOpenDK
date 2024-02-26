@@ -13,7 +13,7 @@ This Python script allows you to scrape a domain specified in the PAGES list, do
 
 3. **Install Dependencies**: Install the required dependencies using pip. Run the following command in your terminal:
 
-   ```bash
+   
    pip install requests-html html2text
 Usage
 Set Pages: Define the URLs of the pages you want to scrape in the PAGES list. You can specify multiple URLs.
