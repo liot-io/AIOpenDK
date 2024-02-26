@@ -24,11 +24,9 @@ aefljahnefl
 Clone this Repository: Clone this repository to your local machine using the following command:
 
 
-   ```bash
 Copy code
 git clone https://github.com/liot-io/AIOpenDK.git
 
-aefljahnefl
 
 
 Execute the Python Script: Execute the Python script with the following command:
