@@ -150,9 +150,7 @@ filepath: Path to the PDF file to be scraped.
 scrape_all_pdfs()
 This function scrapes text from all PDF files in a specified directory. It iterates through each PDF file in the directory, calls scrape_pdf() function for each file, and handles any errors that occur during the scraping process.
 
-Example Usage
-python
-Copy code
+
 from pdfminer.high_level import extract_text
 import os
 
