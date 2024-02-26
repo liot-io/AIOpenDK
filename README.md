@@ -161,7 +161,6 @@ content/foedevarestyrelsen.dk/src_pdf: Directory containing input PDF files.
 content/foedevarestyrelsen.dk/pdfs: Directory where Markdown files will be saved.
 Running the Script
     ```bash
-Copy code
 python pdf_text_scraper.py
 ```
 
