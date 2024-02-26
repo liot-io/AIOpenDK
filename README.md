@@ -156,12 +156,12 @@ This Python script scrapes text from all PDF files in a specified directory and 
 
 ## Directory Structure
 
-pdf_text_scraper.py: Main Python script.
-content/example.dk/src_pdf: Directory containing input PDF files.
-content/example.dk/pdfs: Directory where Markdown files will be saved.
-Running the Script
+pdf_text_scraper.py: --> Main Python script.
+content/example.dk/src_pdf: --> Directory containing input PDF files.
+content/example.dk/pdfs: --> Directory where Markdown files will be saved.
+
+## Running the Script
 
     ```bash
-python pdf_text_scraper.py
+    python pdf_scraper.py
     ```
-
