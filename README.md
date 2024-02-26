@@ -1,63 +1,61 @@
 # AIOpenDK - simple webscraper services
 
 
-# Web Scraper for Generating Markdown Files from Web Pages
+# Web Page to Markdown Converter
 
-This Python script is designed to scrape web pages from a specified domain and save their content as Markdown files. It includes functionalities to handle dependencies, avoid duplicates, and filter out non-HTML content.
+This Python script allows you to download the HTML content from a target web page and save it as a Markdown (.md) file. It utilizes the `requests_html` library to fetch web content and the `html2text` library to convert HTML to Markdown format.
 
-## Table of Contents
+## Features
 
-- [Imported Libraries](#imported-libraries)
-- [Function Definitions](#function-definitions)
-- [Main Execution](#main-execution)
-- [Example Usage](#example-usage)
-- [Notes](#notes)
+- Downloads HTML content from a target web page
+- Converts HTML content to Markdown format
+- Saves Markdown content as a .md file
+- Handles non-HTML pages gracefully
 
-## Imported Libraries
+## Installation
 
-The script utilizes the following libraries:
+1. **Clone the Repository**: Clone this repository to your local machine:
 
-- `os`: Provides a way to interact with the operating system.
-- `html2text`: Converts HTML content to Markdown format.
-- `requests_html`: A library for making HTTP requests and rendering JavaScript.
-- `urllib.parse`: Provides functions to manipulate URLs.
-- `re`: Allows the use of regular expressions for pattern matching.
+    ```bash
+    git clone https://github.com/yourusername/web-page-to-markdown.git
+    ```
 
-## Function Definitions
+2. **Install Dependencies**: Install the required dependencies using pip:
 
-### extract_filename_from_url(url: str) -> str
+    ```bash
+    pip install requests-html html2text
+    ```
 
-This function extracts the filename from a URL and formats it as a Markdown file.
+## Usage
 
-### extract_urls_from_html(html_content: str, base_url: str) -> List[str]
+1. **Set Target Page**: Define the target web page URL in the `TARGET_PAGES` list within the script.
 
-This function extracts all URLs from the HTML content of a web page.
+2. **Run the Script**: Execute the Python script to download and save the target web page as a Markdown file:
 
-### download_and_save_in_markdown(url: str, dir_path: str) -> None
+    ```bash
+    python convert_to_markdown.py
+    ```
 
-Downloads the HTML content from a web page, converts it to Markdown format, and saves it as a file.
+## Code Explanation
 
-### download(pages: List[str]) -> str
+- **extract_filename_from_url**: Extracts the filename from the URL by parsing the domain name and adding the .md extension.
 
-Main function responsible for crawling the website, downloading, and saving pages recursively.
+- **download_and_save_in_markdown**: Downloads the HTML content from the web page, converts it to Markdown format, and saves it as a .md file.
 
-## Main Execution
+- **download_target_page**: Downloads the HTML content from the target page specified in `TARGET_PAGES` and saves it as a Markdown file.
 
-The script defines a list of URLs (`PAGES`) to start the scraping process. It creates a directory named `content/example` to store the Markdown files. The `download` function is called to initiate the scraping process, which traverses through the web pages, extracts links, and saves Markdown files accordingly.
+## Configuration
 
-## Example Usage
+- **TARGET_PAGES**: Define the target web page URLs in the `TARGET_PAGES` list. The script will download and save each page as a Markdown file.
 
-To scrape the website (https://example.dk/), simply execute the script. All pages from the root domain will be saved in the folder `content/example`. Pages from subdirectories will also be saved in their respective folders within `content/example`.
+## Example
 
+Suppose we want to convert the web page https://example.dk/ to Markdown format:
 
-python your_script.py
-
-
-## Notes
-
-Ensure you have proper permissions to write files in the specified directory.
-The script may take some time to execute, depending on the size of the website and the number of pages to be scraped.
-Adjust the timeout parameter in the script if you encounter connection issues or timeouts with certain websites.
+```python
+TARGET_PAGES = [
+    "https://example.dk/",
+]
 
 
 ----------------------------------
