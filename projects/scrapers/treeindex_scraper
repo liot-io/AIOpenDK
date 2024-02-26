@@ -76,7 +76,7 @@ def download(pages: List[str]) -> str:
     return base_dir
 
 PAGES = [
-    "https://foedevarestyrelsen.dk",
+    "https://example.dk",
 ]
 
 if __name__ == "__main__":
