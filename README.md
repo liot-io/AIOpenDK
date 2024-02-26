@@ -51,10 +51,15 @@ To scrape the website [https://foedevarestyrelsen.dk/](https://foedevarestyrelse
 
 ```bash
 python your_script.py
-Notes
+
+
+## Notes
+
 Ensure you have proper permissions to write files in the specified directory.
 The script may take some time to execute, depending on the size of the website and the number of pages to be scraped.
 Adjust the timeout parameter in the script if you encounter connection issues or timeouts with certain websites.
+
+
 ----------------------------------
 
 
