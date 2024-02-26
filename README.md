@@ -83,7 +83,10 @@ Before running the script, ensure you have Python installed on your system. You 
 
 To install the required dependencies, use pip:
 
-pip install requests-html html2text
+    ```bash
+    pip install requests-html html2text
+    ```
+
 
 ## How to Use
 Clone this Repository: Clone this repository to your local machine using the following command:
