@@ -173,7 +173,7 @@ Adjust the timeout parameter in the script if you encounter connection issues or
 This Python script scrapes text from all PDF files in a specified directory and saves them as Markdown files.
 
 
-# Prerequisites
+## Prerequisites
 
 - Python 3.x
 - pdfminer.six library (Install via pip install pdfminer.six)
@@ -197,13 +197,15 @@ This Python script scrapes text from all PDF files in a specified directory and 
   3. The extracted text is saved as a Markdown file in the output directory.
 - If an error occurs during the scraping process, the script prints an error message.
 
-## Function Definitions
+
+## Definitions
 
 **pdf_text_scraper.py**: --> Main Python script.
 
 **content/example.dk/src_pdf**: --> Directory containing input PDF files.
 
 **content/example.dk/pdfs**: --> Directory where Markdown files will be saved.
+
 
 ## Running the Script
 
