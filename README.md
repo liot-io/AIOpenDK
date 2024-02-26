@@ -21,13 +21,13 @@ This Python script allows you to scrape web pages from a specified domain, downl
 ## How to Use
 Clone this Repository: Clone this repository to your local machine using the following command:
 
-bash
+   ```bash
 Copy code
 git clone https://github.com/liot-io/AIOpenDK.git
 
 Execute the Python Script: Execute the Python script with the following command:
 
-bash
+   ```bash
 Copy code
 python treeindex_scraper.py
 
