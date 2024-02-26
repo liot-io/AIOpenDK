@@ -43,10 +43,12 @@ This Python script allows you to download the HTML content from a target web pag
 - **download_and_save_in_markdown**: Downloads the HTML content from the web page, converts it to Markdown format, and saves it as a .md file.
 
 - **download_target_page**: Downloads the HTML content from the target page specified in `TARGET_PAGES` and saves it as a Markdown file.
+  
 
 ## Configuration
 
 - **TARGET_PAGES**: Define the target web page URLs in the `TARGET_PAGES` list. The script will download and save each page as a Markdown file.
+  
 
 ## Example
 
@@ -55,6 +57,7 @@ Suppose we want to convert the web page https://example.dk/ to Markdown format:
 Upon running the script, the HTML content of the target page will be downloaded, converted to Markdown, and saved as example.dk.md in the content directory.
 
 ## Notes
+
 Ensure that you have proper permissions to write files in the specified directory.
 The script will skip non-HTML pages and handle errors gracefully.
 Adjust the timeout parameters in the script if you encounter connection issues or timeouts with certain websites.
