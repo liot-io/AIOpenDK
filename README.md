@@ -43,11 +43,11 @@ Main function responsible for crawling the website, downloading, and saving page
 
 ## Main Execution
 
-The script defines a list of URLs (`PAGES`) to start the scraping process. It creates a directory named `content/foedevarestyrelsen` to store the Markdown files. The `download` function is called to initiate the scraping process, which traverses through the web pages, extracts links, and saves Markdown files accordingly.
+The script defines a list of URLs (`PAGES`) to start the scraping process. It creates a directory named `content/example` to store the Markdown files. The `download` function is called to initiate the scraping process, which traverses through the web pages, extracts links, and saves Markdown files accordingly.
 
 ## Example Usage
 
-To scrape the website [https://foedevarestyrelsen.dk/](https://foedevarestyrelsen.dk/), simply execute the script. All pages from the root domain will be saved in the folder `content/foedevarestyrelsen`. Pages from subdirectories will also be saved in their respective folders within `content/foedevarestyrelsen`.
+To scrape the website (https://example.dk/), simply execute the script. All pages from the root domain will be saved in the folder `content/example`. Pages from subdirectories will also be saved in their respective folders within `content/example`.
 
 
 python your_script.py
@@ -72,24 +72,24 @@ This Python script is designed to scrape web pages from a specified domain and s
 Before running the script, ensure you have Python installed on your system. You can download Python from the official website.
 
 To install the required dependencies, use pip:
-
-```bash
 pip install requests-html html2text
-How to Use
+
+## How to Use
 Clone this Repository: Clone this repository to your local machine using the following command:
 
-bash
-Copy code
-git clone https://github.com/liot-io/AIOpenDK/tree/main.git
-Execute the Python Script: Execute the Python script with the following command:
 
+git clone https://github.com/liot-io/AIOpenDK/tree/main.git
+
+### Execute the Python Script: Execute the Python script with the following command:
 
 python treeindex_scraper.py
-Script Explanation
-Imported Libraries
+
+## Script Explanation
+
+### Imported Libraries
 The script imports the necessary libraries for web scraping, such as os, html2text, requests_html, urllib, and re.
 
-# Function Definitions
+### Function Definitions
 extract_filename_from_url: Extracts the filename from a given URL and formats it as a Markdown file.
 
 extract_urls_from_html: Extracts all URLs from the HTML content of a web page.
@@ -98,7 +98,8 @@ download_and_save_in_markdown: Downloads the HTML content from a web page, conve
 
 download: Main function responsible for crawling the website, downloading, and saving pages recursively.
 
-Main Execution
+## Main Execution
+
 The script defines a list of URLs (PAGES) to start the scraping process.
 It creates a base directory (content/example) to store the Markdown files.
 The download function is called to initiate the scraping process, which traverses through the web pages, extracts links, and saves Markdown files accordingly.
