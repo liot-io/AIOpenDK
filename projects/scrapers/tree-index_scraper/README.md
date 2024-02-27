@@ -9,7 +9,7 @@ Organized File Structure: The downloaded Markdown files are organized hierarchic
 How to Use
 Install Dependencies: Ensure you have Python installed on your system. Install the required dependencies using pip:
 
-    ´´´bash
+    ´´´
 pip install requests-html html2text
     ´´´
     
