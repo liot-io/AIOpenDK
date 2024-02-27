@@ -1,6 +1,6 @@
 This Python script is designed to scrape HTML content from web pages and save them as Markdown files. It uses the requests_html library to fetch HTML content from URLs and the html2text library to convert HTML to Markdown format.
 
-Features
+## Features
 Scraping HTML Content: The script extracts HTML content from web pages and converts it into Markdown format.
 Downloading Subpages: It recursively downloads subpages linked from the main page.
 Handling Fragment Identifiers: The script handles URLs with fragment identifiers (#) by removing them before processing the URL.
@@ -9,15 +9,14 @@ Organized File Structure: The downloaded Markdown files are organized hierarchic
 How to Use
 Install Dependencies: Ensure you have Python installed on your system. Install the required dependencies using pip:
 
-    pip install requests-html html2text
-    
-    
+´´´pip install requests-html html2text´´´
+
 Clone the Repository: Clone this repository to your local machine.
 
 Run the Script: Modify the PAGES list in the script to include the URLs you want to scrape. Then, run the script using Python:
 
-Copy code
-python web_scraper.py
+´´´python web_scraper.py´´´
+
 Check Output: The script will create a content directory in the same location as the script. Inside the content directory, you will find the downloaded Markdown files organized based on the URL structure.
 
 Code Structure
