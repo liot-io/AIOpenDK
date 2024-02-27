@@ -9,9 +9,10 @@ Organized File Structure: The downloaded Markdown files are organized hierarchic
 How to Use
 Install Dependencies: Ensure you have Python installed on your system. Install the required dependencies using pip:
 
-css
-Copy code
+    ´´´bash
 pip install requests-html html2text
+    ´´´
+    
 Clone the Repository: Clone this repository to your local machine.
 
 Run the Script: Modify the PAGES list in the script to include the URLs you want to scrape. Then, run the script using Python:
