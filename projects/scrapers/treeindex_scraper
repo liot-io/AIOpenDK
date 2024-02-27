@@ -54,30 +54,39 @@ def download(pages: List[str]) -> str:
     """Download the HTML content from the pages and save them as markdown files."""
     base_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "content")
     os.makedirs(base_dir, exist_ok=True)
-    
+
+    visited_urls = set()  # Track visited URLs to avoid duplicate downloads
+
     for page_url in pages:
-        session = HTMLSession()
-        response = session.get(page_url, timeout=30)
-        dir_path = os.path.join(base_dir, urlparse(page_url).netloc, *urlparse(page_url).path.strip("/").split("/"))
-        os.makedirs(dir_path, exist_ok=True)
-        download_and_save_in_markdown(page_url, dir_path)
-        
-        subpages = extract_urls_from_html(response.text, page_url)
-        for subpage_url in subpages:
-            if subpage_url.startswith(page_url):
-                sub_dir_path = os.path.join(base_dir, urlparse(subpage_url).netloc, *urlparse(subpage_url).path.strip("/").split("/"))
-                os.makedirs(sub_dir_path, exist_ok=True)
-                download_and_save_in_markdown(subpage_url, sub_dir_path)
+        download_page(page_url, base_dir, visited_urls)
 
-        else:
-            print("All pages have successfully been scraped and saved hierarchically.")
-
+    print("All pages have successfully been scraped and saved hierarchically.")
 
     return base_dir
 
-PAGES = [
-    "https://example.dk",
-]
+def download_page(page_url: str, base_dir: str, visited_urls: set) -> None:
+    """Download the HTML content from a page and recursively download its subpages."""
+    parsed_url = urlparse(page_url)
+    page_url_without_fragment = parsed_url._replace(fragment='').geturl()  # Remove fragment identifier
+    if page_url_without_fragment in visited_urls:
+        return
+
+    session = HTMLSession()
+    response = session.get(page_url_without_fragment, timeout=30)
+
+    dir_path = os.path.join(base_dir, parsed_url.netloc, *parsed_url.path.strip("/").split("/"))
+    os.makedirs(dir_path, exist_ok=True)
+
+    download_and_save_in_markdown(page_url_without_fragment, dir_path)
+    visited_urls.add(page_url_without_fragment)
+
+    subpages = extract_urls_from_html(response.text, page_url_without_fragment)
+    for subpage_url in subpages:
+        if subpage_url.startswith(page_url_without_fragment):
+            download_page(subpage_url, base_dir, visited_urls)
 
 if __name__ == "__main__":
+    PAGES = [
+        "https://Example.dk",
+    ]
     download(PAGES)
