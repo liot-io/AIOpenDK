@@ -2,7 +2,7 @@
 
 -----------------------------------
 
-# AIOpenDK - Web Page to Markdown Converter
+# AIOpenDK - Web Page to Markdown Scraper
 
 This Python script allows you to download the HTML content from a target web page and save it as a Markdown (.md) file. It utilizes the `requests_html` library to fetch web content and the `html2text` library to convert HTML to Markdown format.
 
