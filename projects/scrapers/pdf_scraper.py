@@ -4,7 +4,7 @@ import os
 def scrape_all_pdfs():
     """Scrape text from all PDF files in the specified directory and save them as Markdown files."""
     # Define the directory containing PDF files
-    pdf_directory = os.path.join("content", "foedevarestyrelsen.dk", "src_pdf")
+    pdf_directory = os.path.join("content", "example", "src_pdf")
     
     # Check if the directory exists
     if not os.path.exists(pdf_directory):
@@ -12,7 +12,7 @@ def scrape_all_pdfs():
         return
     
     # Create the output directory for Markdown files
-    output_dir = os.path.join("content", "foedevarestyrelsen.dk", "pdfs")
+    output_dir = os.path.join("content", "example", "pdfs")
     os.makedirs(output_dir, exist_ok=True)
     
     # Track filenames to skip duplicates
