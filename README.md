@@ -1,8 +1,8 @@
-# AIOpenDK - simple scraper services
+# Liot-io
 
 -----------------------------------
 
-# AIOpenDK - Web Page to Markdown Scraper
+# Web Page to Markdown Scraper
 
 This Python script allows you to download the HTML content from a target web page and save it as a Markdown (.md) file. It utilizes the `requests_html` library to fetch web content and the `html2text` library to convert HTML to Markdown format.
 
@@ -75,7 +75,7 @@ You can modify the script to customize the directory structure or filename as pe
 ----------------------------------
 
 
-# AIOpenDK - TreeIndexing Webscraper
+# TreeIndexing Webscraper
 
 This Python script is designed to scrape web pages from a specified domain and save their content as Markdown files. It follows a recursive approach to navigate through the website, ensuring all linked pages within the domain are visited and processed. 
 
@@ -168,7 +168,7 @@ Adjust the timeout parameter in the script if you encounter connection issues or
 
 ----------------------------------------------------
 
-# AIOpenDK - PDF Text Scraper
+# PDF Text Scraper
 
 This Python script scrapes text from all PDF files in a specified directory and saves them as Markdown files.
 
